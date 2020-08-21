@@ -1,0 +1,340 @@
+@import 'style-variables';
+@import 'fonts';
+@import url('https://fonts.googleapis.com/css?family=Gugi&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+
+@import url('https://db.onlinewebfonts.com/c/e6404b5b984ecbc480bbeb17306ae946?family=Arial+Nova');
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Gugi&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i");
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+@import url("https://db.onlinewebfonts.com/c/e6404b5b984ecbc480bbeb17306ae946?family=Arial+Nova");
+
+@mixin getFontFamily(){
+  font-family: 'Roboto', sans-serif;
+}
+
+
+@font-face {
+  font-family: 'ArialNovaW07-Regular';
+  src: url("../fonts/arialnova/Arial-Nova-W07-Regular/Arial-Nova-W07-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: 'ArialNovaW07-Bold';
+  src: url("../fonts/arialnova/Arial-Nova-W07-Bold/Arial-Nova-W07-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: 'ArialNovaW07-Light';
+  src: url("../fonts/arialnova/Arial-Nova-W07-Light/Arial-Nova-W07-Light.ttf") format("truetype"); }
+
+
+
+body {
+  @include getFontFamily();
+ }
+
+* {
+  @include getFontFamily();
+ }
+ a{
+  text-decoration: none;
+ }
+ .standart-btn{
+  a{
+    border:1px solid $blackcolor;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px calc(20px + 15px) 0px 20px;
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+    color:$blackcolor;
+    text-decoration: none;
+    text-transform: uppercase;
+    img{
+        top:12px;
+        right: calc(30px - 15px);
+        height: 15px;
+        width: auto;
+        position: absolute;
+        @include transition-method(0.2s);
+    }
+    &:hover{
+      img{
+        right: 10px;
+        @include transition-method(0.2s);
+      }
+    }
+  }
+}
+
+
+.standart-header{
+  margin:80px 0px;
+  text-align: center;
+  h3{
+      margin:40px 0px;
+      font-size:60px;
+  }
+  p{
+      font-size:18px;
+  }
+}
+
+header{
+  padding-top: 50px;
+  position: fixed;
+  z-index: 999999;
+  display: block;
+  width: 100%;
+  @include transition-method(0.2s);
+  &.header-white{
+    padding: 10px 0px;
+    background:$whitecolorpacity03;
+    @include transition-method(0.2s);
+    @include headershadow();
+    @include boxShadow();
+  }
+  .logo-section{
+    padding: 5px 0px 0 0;
+    a{
+      img{
+        height:30px;
+      }
+    }
+  }
+  nav{
+    &.main-menu{
+      float: right;
+      ul{
+        margin: 0;
+        padding: 0;
+        li{
+          float: left;
+          list-style: none;
+          margin:0px 20px;
+          padding:10px 0px;
+          @include transition-method(0.2s);
+          a{
+            padding:0px 10px;
+            color:$whitecolor;
+            text-decoration: none;
+            font-weight: bold;
+            @include transition-method(0.2s);
+          }
+          &:hover{
+            @include transition-method(0.2s);
+            background:$lightGreyColor;
+            @include boxShadow();
+            @include borderradiusall(5px,5px, 0px,0px);
+            a{
+              color:$blackcolor;
+              @include transition-method(0.2s);
+            }
+            ul{
+              display: block;
+            }
+          }
+          ul{
+            position: absolute;
+            background: $whitecolor;
+            display: none;
+            margin-top:10px;
+            padding:10px;
+            margin-left:-20px;
+            @include borderradius(5px);
+            li{
+              float: none;
+              margin:0px 5px;
+              &:hover{
+                background:$lightGreyColor;
+                @include borderradius(5px);
+               // box-shadow:none;
+              }
+              a{
+                  padding: 5px;
+              }
+            }
+            div {
+              float: left;
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.main-slider{
+  .slider-content{
+    text-align: center;
+    position: absolute;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%); 
+    .slider-content-box{
+      h3{
+        color:$whitecolor;
+        font-size:65px;
+      }
+      p{
+        color:$whitecolor;
+      }
+      .slider-button{
+        a{
+          border:1px solid $whitecolor;
+          height: 50px;
+          line-height: 50px;
+          padding: 0px calc(2rem + 20px) 0px 2rem;
+          display: inline-block;
+          position: relative;
+          font-size: 24px;
+          color:$whitecolor;
+          text-decoration: none;
+          text-transform: uppercase;
+          img{
+              top:15px;
+              right: calc(2rem - 10px);
+              height: 20px;
+              width: auto;
+              position: absolute;
+              @include transition-method(0.2s);
+          }
+          &:hover{
+            img{
+              right: 1rem;
+              @include transition-method(0.2s);
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.home-platform{
+  .platform-header{
+  @extend .standart-header;
+  }
+  .home-platform-box{
+    padding: 20px 0px;
+    display: flex;
+    .platform-img{
+      width: 100px;
+      padding: 0px 20px;
+     
+      img{
+        width: 100%;
+        height: auto;
+        @include borderradius(100%);
+        background:$servicesgreycolor;
+      }
+    }
+    .home-platform-inside{
+      flex: 1 1;
+      .home-platform-btn
+      {
+        margin:40px 0px;
+        @extend .standart-btn;
+      }
+    }
+
+  }
+}
+
+.home-partners{
+  padding:100px 0px;
+
+  #home-partners{
+    .item{
+      display: flex;
+      align-items: center;
+      height:100px;
+      text-align: center;
+      img{
+        max-width: 100%;
+        width:auto;
+        margin: 0px auto;
+      }
+    }
+  }
+}
+
+.home-solutions{
+  background: $solutionGrey;
+  padding:50px 0px;
+  .home-solutions-header{
+    @extend .standart-header;
+  }
+  .col-md-4{
+    a{
+      color:$blackcolor;
+      text-decoration: none;
+    }
+  }
+  .solution-box{
+    text-align: center;
+    padding:15px;
+    @include borderradius(4px);
+    @include transition-method(0.2s);
+
+    .solution-img{
+      img{
+          width:70px;
+          height: 70px;
+          background: $servicesgreycolor;
+          @include borderradius(100%);
+      }
+    }
+    .solution-content{
+      h3{
+        margin:15px 0px;
+        font-weight: bold;
+      }
+      p{
+
+      }
+    }
+    &:hover{
+      background: $whitecolor;
+      @include boxShadow();
+      @include transition-method(0.2s);
+    }
+  }
+}
+
+
+footer{
+  background:$footerGrey;
+  padding:50px 0px;
+  .footer-menu{
+    h3{
+      font-weight: bold;
+      color:$footerTitleFontColor;
+      margin-bottom:30px;
+      text-transform: uppercase;
+      font-size:20px;
+      a{
+        font-weight: bold;
+        color:$footerTitleFontColor;
+      }
+    }
+    ul{
+      padding: 0;
+      margin:0;
+      li{
+        list-style: none;
+        height:30px;
+        line-height: 30px;
+        a{
+          text-decoration: none;
+          color:$footerFontColor;
+        }
+      }
+    }
+  }
+}
