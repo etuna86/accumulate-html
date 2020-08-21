@@ -25,6 +25,8 @@
   header{
     margin-top:0px;
     height: auto;
+    padding: 10px 0px;
+    background: $whitecolor;
   .logo-section{
     display: block;
     width:100%;
@@ -44,31 +46,31 @@
     position: absolute;
     height: 60px;
     width: 55px;
-    top: -60px;
+    top: -45px;
     right: 0;
     i{
       //color:$weightBlueColor;
-      color: $whitecolor;
+      color: $footerTitleFontColor;
     }
     .top-line{
       margin-top:10px;
       height: 2px;
       //background-color:$weightBlueColor;
-      background-color:$whitecolor;
+      background-color:$footerTitleFontColor;
       width: 30px;
       @include transition-method(.5s);
     }
     .middle-line{
       margin-top:7px;
       height: 2px;
-      background-color:$whitecolor;
+      background-color:$footerTitleFontColor;
       width: 24px;
       @include transition-method(.5s);
     }
     .bottom-line{
       margin-top:7px;
       height: 2px;
-      background-color:$whitecolor;
+      background-color:$footerTitleFontColor;
       width: 30px;
       @include transition-method(.5s);
     }
@@ -93,11 +95,34 @@
     height: 1px;
     overflow: hidden;
     @include transition-method(0.5s);
-    padding: 0px 15px;
+    //padding: 0px 15px;
     display: block;
+  
+    .mobile-submenu{
+      display: none;
+      overflow:hidden;
+      height: 0px;
+      background: $footerGrey;
+      padding-left:15px;
+      @include transition-method(0.5s);
+      &.open-submenu{
+        @include transition-method(0.5s);
+        height: auto;
+        min-height: 100px;
+        visibility: visible;
+        display: block;
+      }
+      li{
+        padding:0px;
+        a{
+          font-size:16px;
+        }
+      }
+    }
     ul {
       margin:15px 0px;
-      border-top: 1px solid $whitecolor;
+      padding: 10px 0px;
+      border-top: 1px solid $footerTitleFontColor;
       //border-bottom: 1px solid $whitecolor;
       li{
         display: block;
@@ -107,8 +132,8 @@
         margin: 5px 0px;
         a{
           //color:$weightBlueColor;
-          color: $whitecolor;
-          font-size: 22px;
+          color: $footerTitleFontColor;
+          font-size: 18px;
         }
         .triangle-block{
           @include scale-method(1);
@@ -119,9 +144,9 @@
           float: left;
           left: 0px;
           top: 0px;
-          height: 30px;
-          width: 30px;
-          line-height: 30px;
+          height: 25px;
+          width: 25px;
+          line-height: 25px;
           &.opened-btn{
             @include transition-method(0.2s);
             @include rotateMethod(90deg);
@@ -134,8 +159,8 @@
             @include triangle();
           }
           i{
-            font-size: 30px;
-            color:$whitecolor;
+            font-size: 25px;
+            color:$footerTitleFontColor;
           }
         }
         div{
@@ -145,13 +170,13 @@
           display: block;
           @include transition-method(0.2s);
           &.mobile-submenu{
-            background-color: $whitecolor;
-
+            background-color: $footerTitleFontColor;
+        
             ul{
               margin:0px !important;
               li{
                 a{
-                  color:$normalBlueColor;
+                  color:$footerTitleFontColor;
                 }
               }
             }

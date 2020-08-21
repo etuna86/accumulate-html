@@ -32,7 +32,8 @@ $('.mobil-menu-btn').click(function () {
 
 $('.mobile-submenu-btn').click(function () {
     $(this).toggleClass('opened-btn');
-    $('.mobile-submenu').toggleClass('open-submenu');
+    //$(this).toggleClass('opened-btn');
+    $(this).next().next('.mobile-submenu').toggleClass('open-submenu');
 })
 
 $('.list').click(function () {
@@ -83,14 +84,14 @@ if (screen.width > 765) {}
     window.onscroll = function() {scrollFunction()};
     function scrollFunction() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("myBtn").style.display = "block";
+            document.getElementById("gotopbtn").style.display = "block";
         } else {
-            document.getElementById("myBtn").style.display = "none";
+            document.getElementById("gotopbtn").style.display = "none";
         }
     }
     function topFunction() {
-        var myBtnElement=document.getElementById("myBtn");
-        var rocketFire=myBtnElement.getElementsByTagName('b');
+        var gotopbtnElement=document.getElementById("gotopbtn");
+        var rocketFire=gotopbtnElement.getElementsByTagName('b');
         rocketFire[0].style.display = "inline-block";
         setTimeout(function(){  rocketFire[0].style.display = "none"; }, 1100);
         console.warn("rocketFire",rocketFire);
